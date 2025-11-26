@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apprenez le turc en 30 jours avec des leçons interactives, un dictionnaire de 1000 mots et des quiz">
+    <meta name="keywords" content="turc, apprendre turc, cours turc, langue turque, leçons turques">
+    <meta name="author" content="Turc en 30 Jours">
+    <title>🇹🇷 Turc en 30 Jours - Apprendre le Turc Facilement</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <span class="flag">🇹🇷</span>
+                <span class="logo-text">Turc en 30 Jours</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-section="home">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#lessons" class="nav-link" data-section="lessons">Leçons</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#dictionary" class="nav-link" data-section="dictionary">Dictionnaire</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#grammar" class="nav-link" data-section="grammar">Grammaire</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#quiz" class="nav-link" data-section="quiz">Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#progress" class="nav-link" data-section="progress">Progrès</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="section section-home active">
+            <div class="hero">
+                <div class="container">
+                    <h1 class="hero-title">Apprenez le Turc en 30 Jours</h1>
+                    <p class="hero-subtitle">Maîtrisez les bases du turc avec nos leçons interactives, notre dictionnaire complet et nos quiz engageants</p>
+
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">30</div>
+                            <div class="stat-label">Jours</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Mots</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Dialogues</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Exercices</div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-cta" data-section="lessons">
+                        Commencer Maintenant
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Section -->
+        <section id="lessons" class="section section-lessons">
+            <div class="container">
+                <h2 class="section-title">Leçons</h2>
+                <p class="section-description">Suivez nos 30 leçons structurées pour apprendre le turc progressivement</p>
+
+                <div class="tabs">
+                    <button class="tab-btn active" data-week="1">Semaine 1</button>
+                    <button class="tab-btn" data-week="2">Semaine 2</button>
+                    <button class="tab-btn" data-week="3">Semaine 3</button>
+                    <button class="tab-btn" data-week="4">Semaine 4</button>
+                </div>
+
+                <div class="lessons-grid" id="lessonsGrid">
+                    <!-- Lessons will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Dictionary Section -->
+        <section id="dictionary" class="section section-dictionary">
+            <div class="container">
+                <h2 class="section-title">Dictionnaire</h2>
+                <p class="section-description">Plus de 1000 mots avec audio et traductions</p>
+
+                <div class="dictionary-controls">
+                    <div class="search-box">
+                        <input type="text" id="dictionarySearch" placeholder="Rechercher un mot..." class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">Tous</button>
+                        <button class="filter-btn" data-category="verbs">Verbes</button>
+                        <button class="filter-btn" data-category="nouns">Noms</button>
+                        <button class="filter-btn" data-category="adjectives">Adjectifs</button>
+                        <button class="filter-btn" data-category="expressions">Expressions</button>
+                    </div>
+                </div>
+
+                <div class="dictionary-grid" id="dictionaryGrid">
+                    <!-- Dictionary words will be loaded here by JavaScript -->
+                </div>
+
+                <div class="pagination" id="dictionaryPagination">
+                    <!-- Pagination will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Grammar Section -->
+        <section id="grammar" class="section section-grammar">
+            <div class="container">
+                <h2 class="section-title">Grammaire</h2>
+                <p class="section-description">Les règles essentielles de la grammaire turque</p>
+
+                <div class="tabs">
+                    <button class="tab-btn active" data-grammar="alphabet">Alphabet</button>
+                    <button class="tab-btn" data-grammar="pronouns">Pronoms</button>
+                    <button class="tab-btn" data-grammar="verbs">Verbes</button>
+                    <button class="tab-btn" data-grammar="cases">Cas</button>
+                    <button class="tab-btn" data-grammar="harmony">Harmonie Vocalique</button>
+                </div>
+
+                <div class="grammar-content" id="grammarContent">
+                    <!-- Grammar content will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section section-quiz">
+            <div class="container">
+                <h2 class="section-title">Quiz</h2>
+                <p class="section-description">Testez vos connaissances avec nos quiz interactifs</p>
+
+                <div id="quizMenu" class="quiz-menu">
+                    <div class="quiz-grid">
+                        <div class="quiz-card" data-quiz-type="vocabulary">
+                            <div class="quiz-icon">📚</div>
+                            <h3 class="quiz-title">Quiz Vocabulaire</h3>
+                            <p class="quiz-description">Testez votre connaissance des mots turcs</p>
+                            <button class="btn btn-secondary">Commencer</button>
+                        </div>
+
+                        <div class="quiz-card" data-quiz-type="grammar">
+                            <div class="quiz-icon">✏️</div>
+                            <h3 class="quiz-title">Quiz Grammaire</h3>
+                            <p class="quiz-description">Vérifiez vos compétences grammaticales</p>
+                            <button class="btn btn-secondary">Commencer</button>
+                        </div>
+
+                        <div class="quiz-card" data-quiz-type="listening">
+                            <div class="quiz-icon">🔊</div>
+                            <h3 class="quiz-title">Quiz Écoute</h3>
+                            <p class="quiz-description">Pratiquez votre compréhension orale</p>
+                            <button class="btn btn-secondary">Commencer</button>
+                        </div>
+
+                        <div class="quiz-card" data-quiz-type="translation">
+                            <div class="quiz-icon">🔄</div>
+                            <h3 class="quiz-title">Quiz Traduction</h3>
+                            <p class="quiz-description">Traduisez entre le français et le turc</p>
+                            <button class="btn btn-secondary">Commencer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quizContainer" class="quiz-container hidden">
+                    <div class="quiz-header">
+                        <div class="quiz-info">
+                            <span class="quiz-question-number">Question <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></span>
+                            <span class="quiz-score">Score: <span id="quizScore">0</span></span>
+                        </div>
+                        <button class="btn-close-quiz" id="closeQuiz">✕</button>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3 id="questionText">Question sera affichée ici</h3>
+                    </div>
+
+                    <div class="quiz-options" id="quizOptions">
+                        <!-- Options will be loaded here -->
+                    </div>
+
+                    <div class="quiz-feedback hidden" id="quizFeedback">
+                        <p id="feedbackText"></p>
+                    </div>
+
+                    <button class="btn btn-primary hidden" id="nextQuestion">Question Suivante</button>
+                </div>
+
+                <div id="quizResults" class="quiz-results hidden">
+                    <div class="results-card">
+                        <h3 class="results-title">Quiz Terminé!</h3>
+                        <div class="results-score">
+                            <span class="score-number" id="finalScore">0</span>
+                            <span class="score-total">/ <span id="finalTotal">10</span></span>
+                        </div>
+                        <p class="results-message" id="resultsMessage"></p>
+                        <div class="results-actions">
+                            <button class="btn btn-primary" id="retryQuiz">Recommencer</button>
+                            <button class="btn btn-secondary" id="backToMenu">Menu Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progress" class="section section-progress">
+            <div class="container">
+                <h2 class="section-title">Votre Progrès</h2>
+                <p class="section-description">Suivez votre parcours d'apprentissage</p>
+
+                <div class="progress-grid">
+                    <div class="progress-card">
+                        <div class="progress-icon">📅</div>
+                        <h3 class="progress-title">Jours Complétés</h3>
+                        <div class="progress-circle" data-progress="0">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="progress-ring-circle" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-value" id="daysCompleted">0</span>
+                                <span class="progress-max">/30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <div class="progress-icon">📖</div>
+                        <h3 class="progress-title">Mots Appris</h3>
+                        <div class="progress-circle" data-progress="0">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="progress-ring-circle" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-value" id="wordsLearned">0</span>
+                                <span class="progress-max">/1000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <div class="progress-icon">🎯</div>
+                        <h3 class="progress-title">Score Moyen Quiz</h3>
+                        <div class="progress-circle" data-progress="0">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="progress-ring-circle" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-value" id="averageScore">0</span>
+                                <span class="progress-max">%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievements">
+                    <h3 class="achievements-title">Réalisations</h3>
+                    <div class="achievements-grid" id="achievementsGrid">
+                        <!-- Achievements will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lesson Modal -->
+    <div id="lessonModal" class="modal">
+        <div class="modal-content lesson-modal-content">
+            <div class="modal-header">
+                <h2 id="lessonModalTitle">Titre de la leçon</h2>
+                <button class="modal-close" id="closeLessonModal">✕</button>
+            </div>
+
+            <div class="modal-body" id="lessonModalBody">
+                <!-- Lesson content will be loaded here -->
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="prevLesson">◄ Précédent</button>
+                <button class="btn btn-success" id="markComplete">Marquer comme Complété</button>
+                <button class="btn btn-secondary" id="nextLesson">Suivant ►</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">🇹🇷 Turc en 30 Jours</h3>
+                    <p class="footer-text">Apprenez le turc facilement avec nos leçons interactives et notre méthode progressive.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Liens Utiles</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#lessons">Leçons</a></li>
+                        <li><a href="#dictionary">Dictionnaire</a></li>
+                        <li><a href="#grammar">Grammaire</a></li>
+                        <li><a href="#quiz">Quiz</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <p class="footer-text">Pour toute question ou suggestion, n'hésitez pas à nous contacter.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Turc en 30 Jours. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/dictionary.js"></script>
+    <script src="js/grammar.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
