@@ -289,3 +289,16 @@ if (document.readyState === 'loading') {
 
 // Exporter pour utilisation globale
 window.AudioSystem = AudioSystem;
+
+/**
+ * Fonction globale simple pour jouer l'audio turc
+ * Utilisée par les modules lessons, dictionary et quiz
+ * @param {string} text - Texte à prononcer
+ */
+window.playTurkishAudio = function(text) {
+    if (window.AudioSystem) {
+        window.AudioSystem.speak(text);
+    } else {
+        console.error('AudioSystem not initialized');
+    }
+};

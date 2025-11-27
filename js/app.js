@@ -61,6 +61,11 @@ class TurkishLearningApp {
             window.grammarModule = new GrammarModule();
         }
 
+        // Initialize Conjugation module
+        if (window.ConjugationModule) {
+            window.conjugationModule = new ConjugationModule();
+        }
+
         // Initialize Quiz module
         if (window.QuizModule) {
             window.quizModule = new QuizModule();
