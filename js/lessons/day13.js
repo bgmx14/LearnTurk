@@ -2,7 +2,10 @@
  * JOUR 13 : Le corps humain
  */
 
-const day13 = {
+(function() {
+    if (window.day13) return; // Already loaded
+
+    window.day13 = {
     id: 13,
     title: "Le corps humain",
     description: "Vocabulaire essentiel sur le corps et la santé",
@@ -121,7 +124,8 @@ const day13 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day13;
-}
-window.day13 = day13;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day13;
+    }
+})();

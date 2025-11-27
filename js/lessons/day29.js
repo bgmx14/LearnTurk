@@ -2,7 +2,10 @@
  * JOUR 29 : Culture turque approfondie
  */
 
-const day29 = {
+(function() {
+    if (window.day29) return; // Already loaded
+
+    window.day29 = {
     id: 29,
     title: "Culture turque approfondie",
     description: "Immersion dans la culture, traditions et gastronomie turques",
@@ -119,7 +122,9 @@ const day29 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day29;
-}
-window.day29 = day29;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day29;
+    }
+})();

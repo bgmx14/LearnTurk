@@ -1,4 +1,7 @@
-const familyPeople = [
+(function() {
+    if (window.familyPeople) return; // Already loaded
+
+    window.familyPeople = [
     { turkish: "anne", phonetic: "an-ne", translation: "mère", category: "nouns" },
     { turkish: "baba", phonetic: "ba-ba", translation: "père", category: "nouns" },
     { turkish: "çocuk", phonetic: "tcho-djuk", translation: "enfant", category: "nouns" },
@@ -104,6 +107,8 @@ const familyPeople = [
 // Export to window for browser use
 window.familyPeople = familyPeople;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = familyPeople;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.familyPeople;
+    }
+})();

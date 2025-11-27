@@ -1,4 +1,7 @@
-const places = [
+(function() {
+    if (window.places) return; // Already loaded
+
+    window.places = [
     { turkish: "ev", phonetic: "ev", translation: "maison", category: "nouns" },
     { turkish: "okul", phonetic: "o-kul", translation: "école", category: "nouns" },
     { turkish: "hastane", phonetic: "has-ta-ne", translation: "hôpital", category: "nouns" },
@@ -104,6 +107,8 @@ const places = [
 // Export to window for browser use
 window.places = places;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = places;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.places;
+    }
+})();

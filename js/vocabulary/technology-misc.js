@@ -1,4 +1,7 @@
-const technologyMisc = [
+(function() {
+    if (window.technologyMisc) return; // Already loaded
+
+    window.technologyMisc = [
     { turkish: "bilgisayar", phonetic: "bil-gi-sa-yar", translation: "ordinateur", category: "nouns" },
     { turkish: "telefon", phonetic: "te-le-fon", translation: "téléphone", category: "nouns" },
     { turkish: "cep telefonu", phonetic: "djep te-le-fo-nu", translation: "téléphone portable", category: "nouns" },
@@ -102,6 +105,8 @@ const technologyMisc = [
 // Export to window for browser use
 window.technologyMisc = technologyMisc;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = technologyMisc;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.technologyMisc;
+    }
+})();

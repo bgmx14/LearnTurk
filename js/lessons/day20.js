@@ -2,7 +2,10 @@
  * JOUR 20 : Les loisirs
  */
 
-const day20 = {
+(function() {
+    if (window.day20) return; // Already loaded
+
+    window.day20 = {
     id: 20,
     title: "Les loisirs",
     description: "Parlez de vos hobbies et activités préférées en turc",
@@ -114,7 +117,9 @@ const day20 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day20;
-}
-window.day20 = day20;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day20;
+    }
+})();

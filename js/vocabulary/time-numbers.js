@@ -1,4 +1,7 @@
-const timeNumbers = [
+(function() {
+    if (window.timeNumbers) return; // Already loaded
+
+    window.timeNumbers = [
     { turkish: "zaman", phonetic: "za-man", translation: "temps", category: "nouns" },
     { turkish: "saat", phonetic: "sa-at", translation: "heure", category: "nouns" },
     { turkish: "dakika", phonetic: "da-ki-ka", translation: "minute", category: "nouns" },
@@ -104,6 +107,8 @@ const timeNumbers = [
 // Export to window for browser use
 window.timeNumbers = timeNumbers;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = timeNumbers;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.timeNumbers;
+    }
+})();

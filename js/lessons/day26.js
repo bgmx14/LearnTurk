@@ -2,7 +2,10 @@
  * JOUR 26 : Nature
  */
 
-const day26 = {
+(function() {
+    if (window.day26) return; // Already loaded
+
+    window.day26 = {
     id: 26,
     title: "Nature",
     description: "Vocabulaire de la nature et de l'environnement",
@@ -119,7 +122,9 @@ const day26 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day26;
-}
-window.day26 = day26;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day26;
+    }
+})();

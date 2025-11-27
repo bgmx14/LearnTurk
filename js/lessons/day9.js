@@ -2,7 +2,10 @@
  * JOUR 9 : La nourriture
  */
 
-const day9 = {
+(function() {
+    if (window.day9) return; // Already loaded
+
+    window.day9 = {
     id: 9,
     title: "La nourriture",
     description: "Vocabulaire essentiel sur les aliments",
@@ -110,7 +113,8 @@ const day9 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day9;
-}
-window.day9 = day9;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day9;
+    }
+})();

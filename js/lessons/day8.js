@@ -2,7 +2,10 @@
  * JOUR 8 : Au restaurant
  */
 
-const day8 = {
+(function() {
+    if (window.day8) return; // Already loaded
+
+    window.day8 = {
     id: 8,
     title: "Au restaurant",
     description: "Vocabulaire essentiel pour commander au restaurant",
@@ -105,7 +108,8 @@ const day8 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day8;
-}
-window.day8 = day8;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day8;
+    }
+})();

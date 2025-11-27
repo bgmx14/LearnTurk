@@ -1,4 +1,7 @@
-const nounsFood = [
+(function() {
+    if (window.nounsFood) return; // Already loaded
+
+    window.nounsFood = [
     { turkish: "Ekmek", phonetic: "èk-mèk", translation: "pain", category: "nouns" },
     { turkish: "Et", phonetic: "èt", translation: "viande", category: "nouns" },
     { turkish: "Peynir", phonetic: "pèy-nir", translation: "fromage", category: "nouns" },
@@ -102,6 +105,8 @@ const nounsFood = [
 // Export to window for browser use
 window.nounsFood = nounsFood;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = nounsFood;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.nounsFood;
+    }
+})();

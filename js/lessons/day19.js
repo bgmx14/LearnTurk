@@ -2,7 +2,10 @@
  * JOUR 19 : Les saisons
  */
 
-const day19 = {
+(function() {
+    if (window.day19) return; // Already loaded
+
+    window.day19 = {
     id: 19,
     title: "Les saisons",
     description: "Découvrez les quatre saisons et leurs particularités en Turquie",
@@ -113,7 +116,9 @@ const day19 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day19;
-}
-window.day19 = day19;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day19;
+    }
+})();

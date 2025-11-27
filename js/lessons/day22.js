@@ -2,7 +2,10 @@
  * JOUR 22 : Travail
  */
 
-const day22 = {
+(function() {
+    if (window.day22) return; // Already loaded
+
+    window.day22 = {
     id: 22,
     title: "Travail",
     description: "Vocabulaire professionnel et expressions du monde du travail",
@@ -109,7 +112,9 @@ const day22 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day22;
-}
-window.day22 = day22;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day22;
+    }
+})();

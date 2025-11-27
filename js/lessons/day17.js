@@ -2,7 +2,10 @@
  * JOUR 17 : À l'hôtel
  */
 
-const day17 = {
+(function() {
+    if (window.day17) return; // Already loaded
+
+    window.day17 = {
     id: 17,
     title: "À l'hôtel",
     description: "Vocabulaire et expressions pour votre séjour à l'hôtel",
@@ -111,7 +114,9 @@ const day17 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day17;
-}
-window.day17 = day17;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day17;
+    }
+})();

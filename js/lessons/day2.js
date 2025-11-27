@@ -2,7 +2,10 @@
  * JOUR 2 : Pronoms personnels et verbe être
  */
 
-const day2 = {
+(function() {
+    if (window.day2) return; // Already loaded
+
+    window.day2 = {
     id: 2,
     title: "Pronoms personnels et verbe être",
     description: "Apprenez les pronoms et les suffixes du verbe être",
@@ -143,7 +146,8 @@ const day2 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day2;
-}
-window.day2 = day2;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day2;
+    }
+})();

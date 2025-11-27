@@ -1,4 +1,7 @@
-const adjectives = [
+(function() {
+    if (window.adjectives) return; // Already loaded
+
+    window.adjectives = [
     { turkish: "Güzel", phonetic: "gü-zèl", translation: "beau, joli", category: "adjectives" },
     { turkish: "Çirkin", phonetic: "tchir-kin", translation: "laid", category: "adjectives" },
     { turkish: "Büyük", phonetic: "bü-yük", translation: "grand", category: "adjectives" },
@@ -103,6 +106,8 @@ const adjectives = [
 // Export to window for browser use
 window.adjectives = adjectives;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = adjectives;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.adjectives;
+    }
+})();

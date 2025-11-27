@@ -1,4 +1,7 @@
-const nounsCommon = [
+(function() {
+    if (window.nounsCommon) return; // Already loaded
+
+    window.nounsCommon = [
     { turkish: "Ev", phonetic: "èv", translation: "maison", category: "nouns" },
     { turkish: "Araba", phonetic: "a-ra-ba", translation: "voiture", category: "nouns" },
     { turkish: "Kitap", phonetic: "ki-tap", translation: "livre", category: "nouns" },
@@ -102,6 +105,8 @@ const nounsCommon = [
 // Export to window for browser use
 window.nounsCommon = nounsCommon;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = nounsCommon;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.nounsCommon;
+    }
+})();

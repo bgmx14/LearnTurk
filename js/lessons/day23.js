@@ -2,7 +2,10 @@
  * JOUR 23 : Santé
  */
 
-const day23 = {
+(function() {
+    if (window.day23) return; // Already loaded
+
+    window.day23 = {
     id: 23,
     title: "Santé",
     description: "Vocabulaire médical et expressions pour parler de la santé",
@@ -112,7 +115,9 @@ const day23 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day23;
-}
-window.day23 = day23;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day23;
+    }
+})();

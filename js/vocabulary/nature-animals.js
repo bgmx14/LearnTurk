@@ -1,4 +1,7 @@
-const natureAnimals = [
+(function() {
+    if (window.natureAnimals) return; // Already loaded
+
+    window.natureAnimals = [
     { turkish: "ağaç", phonetic: "a-atch", translation: "arbre", category: "nouns" },
     { turkish: "çiçek", phonetic: "tchi-tchek", translation: "fleur", category: "nouns" },
     { turkish: "bitki", phonetic: "bit-ki", translation: "plante", category: "nouns" },
@@ -105,6 +108,8 @@ const natureAnimals = [
 // Export to window for browser use
 window.natureAnimals = natureAnimals;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = natureAnimals;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.natureAnimals;
+    }
+})();

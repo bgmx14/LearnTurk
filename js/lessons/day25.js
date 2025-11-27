@@ -2,7 +2,10 @@
  * JOUR 25 : Technologie
  */
 
-const day25 = {
+(function() {
+    if (window.day25) return; // Already loaded
+
+    window.day25 = {
     id: 25,
     title: "Technologie",
     description: "Vocabulaire moderne de la technologie et du numérique",
@@ -116,7 +119,9 @@ const day25 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day25;
-}
-window.day25 = day25;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day25;
+    }
+})();
