@@ -25,10 +25,18 @@ class TurkishLearningApp {
     init() {
         console.log('🚀 Initializing Turkish Learning App...');
 
-        // Wait for data to be loaded before initializing modules
-        window.addEventListener('dataLoaded', () => {
+        // Check if data is already loaded
+        if (window.lessonsData && window.lessonsData.length > 0) {
+            console.log('📦 Data already loaded, initializing modules immediately');
             this.initializeModules();
-        });
+        } else {
+            // Wait for data to be loaded before initializing modules
+            console.log('⏳ Waiting for data to load...');
+            window.addEventListener('dataLoaded', () => {
+                console.log('📦 Data loaded event received');
+                this.initializeModules();
+            });
+        }
 
         // Initialize navigation
         this.initNavigation();
