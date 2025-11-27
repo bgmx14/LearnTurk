@@ -2,7 +2,10 @@
  * JOUR 15 : Les transports
  */
 
-const day15 = {
+(function() {
+    if (window.day15) return; // Already loaded
+
+    window.day15 = {
     id: 15,
     title: "Les transports",
     description: "Apprenez à vous déplacer en Turquie : bus, taxi, train, avion",
@@ -107,7 +110,9 @@ const day15 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day15;
-}
-window.day15 = day15;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day15;
+    }
+})();

@@ -1,4 +1,7 @@
-const verbs = [
+(function() {
+    if (window.verbs) return; // Already loaded
+
+    window.verbs = [
     { turkish: "Gitmek", phonetic: "ghuit-mèk", translation: "aller", category: "verbs" },
     { turkish: "Gelmek", phonetic: "ghèl-mèk", translation: "venir", category: "verbs" },
     { turkish: "Yapmak", phonetic: "yap-mak", translation: "faire", category: "verbs" },
@@ -103,6 +106,8 @@ const verbs = [
 // Export to window for browser use
 window.verbs = verbs;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = verbs;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.verbs;
+    }
+})();

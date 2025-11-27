@@ -2,7 +2,10 @@
  * JOUR 4 : Famille et suffixes possessifs
  */
 
-const day4 = {
+(function() {
+    if (window.day4) return; // Already loaded
+
+    window.day4 = {
     id: 4,
     title: "Famille et suffixes possessifs",
     description: "Apprenez les mots de la famille et comment exprimer la possession",
@@ -150,7 +153,8 @@ const day4 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day4;
-}
-window.day4 = day4;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day4;
+    }
+})();

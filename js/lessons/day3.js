@@ -2,7 +2,10 @@
  * JOUR 3 : Nombres 0-100 et l'heure
  */
 
-const day3 = {
+(function() {
+    if (window.day3) return; // Already loaded
+
+    window.day3 = {
     id: 3,
     title: "Nombres 0-100 et l'heure",
     description: "Apprenez à compter et à dire l'heure en turc",
@@ -139,7 +142,8 @@ const day3 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day3;
-}
-window.day3 = day3;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day3;
+    }
+})();

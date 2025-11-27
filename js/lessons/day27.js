@@ -2,7 +2,10 @@
  * JOUR 27 : Animaux
  */
 
-const day27 = {
+(function() {
+    if (window.day27) return; // Already loaded
+
+    window.day27 = {
     id: 27,
     title: "Animaux",
     description: "Vocabulaire des animaux domestiques et sauvages",
@@ -121,7 +124,9 @@ const day27 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day27;
-}
-window.day27 = day27;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day27;
+    }
+})();

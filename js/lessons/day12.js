@@ -2,7 +2,10 @@
  * JOUR 12 : Les vêtements
  */
 
-const day12 = {
+(function() {
+    if (window.day12) return; // Already loaded
+
+    window.day12 = {
     id: 12,
     title: "Les vêtements",
     description: "Vocabulaire essentiel sur les vêtements",
@@ -121,7 +124,8 @@ const day12 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day12;
-}
-window.day12 = day12;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day12;
+    }
+})();

@@ -2,7 +2,10 @@
  * JOUR 11 : Les courses
  */
 
-const day11 = {
+(function() {
+    if (window.day11) return; // Already loaded
+
+    window.day11 = {
     id: 11,
     title: "Les courses",
     description: "Vocabulaire essentiel pour faire du shopping",
@@ -118,7 +121,8 @@ const day11 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day11;
-}
-window.day11 = day11;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day11;
+    }
+})();

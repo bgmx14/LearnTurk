@@ -2,7 +2,10 @@
  * JOUR 6 : Couleurs
  */
 
-const day6 = {
+(function() {
+    if (window.day6) return; // Already loaded
+
+    window.day6 = {
     id: 6,
     title: "Les couleurs",
     description: "Apprenez les couleurs principales en turc",
@@ -145,7 +148,8 @@ const day6 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day6;
-}
-window.day6 = day6;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day6;
+    }
+})();

@@ -2,7 +2,10 @@
  * JOUR 24 : Émotions
  */
 
-const day24 = {
+(function() {
+    if (window.day24) return; // Already loaded
+
+    window.day24 = {
     id: 24,
     title: "Émotions",
     description: "Vocabulaire des émotions et sentiments",
@@ -118,7 +121,9 @@ const day24 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day24;
-}
-window.day24 = day24;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day24;
+    }
+})();

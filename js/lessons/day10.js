@@ -2,7 +2,10 @@
  * JOUR 10 : Les boissons
  */
 
-const day10 = {
+(function() {
+    if (window.day10) return; // Already loaded
+
+    window.day10 = {
     id: 10,
     title: "Les boissons",
     description: "Vocabulaire essentiel sur les boissons",
@@ -113,7 +116,8 @@ const day10 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day10;
-}
-window.day10 = day10;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day10;
+    }
+})();

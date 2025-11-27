@@ -2,7 +2,10 @@
  * JOUR 21 : Révision semaine 3
  */
 
-const day21 = {
+(function() {
+    if (window.day21) return; // Already loaded
+
+    window.day21 = {
     id: 21,
     title: "Révision de la semaine 3",
     description: "Révisez tout le vocabulaire et la grammaire de la semaine 3",
@@ -129,7 +132,9 @@ const day21 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day21;
-}
-window.day21 = day21;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day21;
+    }
+})();

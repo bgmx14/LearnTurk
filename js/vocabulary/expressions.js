@@ -1,4 +1,7 @@
-const expressions = [
+(function() {
+    if (window.expressions) return; // Already loaded
+
+    window.expressions = [
     { turkish: "Merhaba", phonetic: "mèr-ha-ba", translation: "bonjour", category: "expressions" },
     { turkish: "Selam", phonetic: "sè-lam", translation: "salut", category: "expressions" },
     { turkish: "Günaydın", phonetic: "güün-ay-dn", translation: "bonjour (matin)", category: "expressions" },
@@ -104,6 +107,8 @@ const expressions = [
 // Export to window for browser use
 window.expressions = expressions;
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = expressions;
-}
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.expressions;
+    }
+})();

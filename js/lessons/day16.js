@@ -2,7 +2,10 @@
  * JOUR 16 : Les directions
  */
 
-const day16 = {
+(function() {
+    if (window.day16) return; // Already loaded
+
+    window.day16 = {
     id: 16,
     title: "Les directions",
     description: "Apprenez à demander et donner des directions en turc",
@@ -114,7 +117,9 @@ const day16 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day16;
-}
-window.day16 = day16;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day16;
+    }
+})();

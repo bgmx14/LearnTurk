@@ -2,7 +2,10 @@
  * JOUR 5 : Jours de la semaine et mois
  */
 
-const day5 = {
+(function() {
+    if (window.day5) return; // Already loaded
+
+    window.day5 = {
     id: 5,
     title: "Jours de la semaine et mois",
     description: "Apprenez les jours et les mois en turc",
@@ -158,7 +161,8 @@ const day5 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day5;
-}
-window.day5 = day5;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day5;
+    }
+})();

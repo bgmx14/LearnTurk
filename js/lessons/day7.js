@@ -2,7 +2,10 @@
  * JOUR 7 : Révision Semaine 1
  */
 
-const day7 = {
+(function() {
+    if (window.day7) return; // Already loaded
+
+    window.day7 = {
     id: 7,
     title: "Révision Semaine 1",
     description: "Révisez tout ce que vous avez appris cette semaine",
@@ -149,7 +152,8 @@ const day7 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day7;
-}
-window.day7 = day7;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day7;
+    }
+})();

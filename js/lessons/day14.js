@@ -2,7 +2,10 @@
  * JOUR 14 : Révision semaine 2
  */
 
-const day14 = {
+(function() {
+    if (window.day14) return; // Already loaded
+
+    window.day14 = {
     id: 14,
     title: "Révision semaine 2",
     description: "Révision complète du vocabulaire et de la grammaire de la semaine 2",
@@ -128,7 +131,8 @@ const day14 = {
     ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day14;
-}
-window.day14 = day14;
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day14;
+    }
+})();

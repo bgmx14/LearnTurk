@@ -2,7 +2,10 @@
  * JOUR 1 : Alphabet turc et prononciation
  */
 
-const day1 = {
+(function() {
+    if (window.day1) return; // Already loaded
+
+    window.day1 = {
     id: 1,
     title: "Alphabet turc et prononciation",
     description: "Découvrez les 29 lettres de l'alphabet turc et leur prononciation",
@@ -102,10 +105,10 @@ const day1 = {
             explanation: "Merhaba signifie 'Bonjour' en turc."
         }
     ]
-};
+    };
 
-// Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day1;
-}
-window.day1 = day1;
+    // Export pour utilisation
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day1;
+    }
+})();

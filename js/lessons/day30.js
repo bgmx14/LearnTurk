@@ -2,7 +2,10 @@
  * JOUR 30 : Révision finale complète
  */
 
-const day30 = {
+(function() {
+    if (window.day30) return; // Already loaded
+
+    window.day30 = {
     id: 30,
     title: "Révision finale complète",
     description: "Récapitulatif des 30 jours d'apprentissage du turc",
@@ -143,7 +146,9 @@ const day30 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day30;
-}
-window.day30 = day30;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day30;
+    }
+})();

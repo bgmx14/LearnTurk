@@ -2,7 +2,10 @@
  * JOUR 28 : Expressions avancées
  */
 
-const day28 = {
+(function() {
+    if (window.day28) return; // Already loaded
+
+    window.day28 = {
     id: 28,
     title: "Expressions avancées",
     description: "Expressions idiomatiques et mots de liaison avancés",
@@ -121,7 +124,9 @@ const day28 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day28;
-}
-window.day28 = day28;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day28;
+    }
+})();

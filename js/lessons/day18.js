@@ -2,7 +2,10 @@
  * JOUR 18 : La météo
  */
 
-const day18 = {
+(function() {
+    if (window.day18) return; // Already loaded
+
+    window.day18 = {
     id: 18,
     title: "La météo",
     description: "Apprenez à parler du temps qu'il fait en turc",
@@ -113,7 +116,9 @@ const day18 = {
 };
 
 // Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = day18;
-}
-window.day18 = day18;
+
+    // Export for Node.js if needed
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.day18;
+    }
+})();
