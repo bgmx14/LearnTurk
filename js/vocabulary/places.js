@@ -101,6 +101,9 @@ const places = [
     { turkish: "kule", phonetic: "ku-le", translation: "tour", category: "nouns" }
 ];
 
+// Export to window for browser use
+window.places = places;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = places;
 }

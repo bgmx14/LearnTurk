@@ -102,6 +102,9 @@ const natureAnimals = [
     { turkish: "böcek", phonetic: "beu-djek", translation: "insecte", category: "nouns" }
 ];
 
+// Export to window for browser use
+window.natureAnimals = natureAnimals;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = natureAnimals;
 }

@@ -115,3 +115,4 @@ const day23 = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = day23;
 }
+window.day23 = day23;

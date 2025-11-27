@@ -100,6 +100,9 @@ const adjectives = [
     { turkish: "Bayat", phonetic: "ba-yat", translation: "rassis", category: "adjectives" },
 ];
 
+// Export to window for browser use
+window.adjectives = adjectives;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = adjectives;
 }

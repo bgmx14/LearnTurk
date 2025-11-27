@@ -101,6 +101,9 @@ const expressions = [
     { turkish: "Korkunç", phonetic: "kor-kountch", translation: "affreux", category: "expressions" },
 ];
 
+// Export to window for browser use
+window.expressions = expressions;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = expressions;
 }

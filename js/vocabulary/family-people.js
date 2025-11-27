@@ -101,6 +101,9 @@ const familyPeople = [
     { turkish: "gelin", phonetic: "ge-lin", translation: "mariée/belle-fille", category: "nouns" }
 ];
 
+// Export to window for browser use
+window.familyPeople = familyPeople;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = familyPeople;
 }

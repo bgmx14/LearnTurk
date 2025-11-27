@@ -121,3 +121,4 @@ const day24 = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = day24;
 }
+window.day24 = day24;

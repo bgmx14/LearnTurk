@@ -99,6 +99,9 @@ const nounsCommon = [
     { turkish: "Gömlek", phonetic: "gueûm-lèk", translation: "chemise", category: "nouns" },
 ];
 
+// Export to window for browser use
+window.nounsCommon = nounsCommon;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = nounsCommon;
 }
