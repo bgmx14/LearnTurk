@@ -99,6 +99,9 @@ const technologyMisc = [
     { turkish: "imza", phonetic: "im-za", translation: "signature", category: "nouns" }
 ];
 
+// Export to window for browser use
+window.technologyMisc = technologyMisc;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = technologyMisc;
 }

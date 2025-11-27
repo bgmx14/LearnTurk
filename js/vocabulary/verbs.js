@@ -100,6 +100,9 @@ const verbs = [
     { turkish: "Gezinmek", phonetic: "ghè-zin-mèk", translation: "se promener", category: "verbs" },
 ];
 
+// Export to window for browser use
+window.verbs = verbs;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = verbs;
 }

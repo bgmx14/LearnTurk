@@ -99,6 +99,9 @@ const nounsFood = [
     { turkish: "Çikolata", phonetic: "tchi-ko-la-ta", translation: "chocolat", category: "nouns" },
 ];
 
+// Export to window for browser use
+window.nounsFood = nounsFood;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = nounsFood;
 }

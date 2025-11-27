@@ -101,6 +101,9 @@ const timeNumbers = [
     { turkish: "onuncu", phonetic: "o-nun-dju", translation: "dixième", category: "nouns" }
 ];
 
+// Export to window for browser use
+window.timeNumbers = timeNumbers;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = timeNumbers;
 }

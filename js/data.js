@@ -9,86 +9,57 @@ window.lessonsData = [];
 window.vocabularyData = [];
 
 /**
- * Dynamically load all lesson files (day1.js to day30.js)
- * Each file defines a global variable (day1, day2, etc.)
+ * Load all lessons from pre-loaded scripts
+ * Lesson files are now loaded via script tags in index.html
  */
 function loadLessons() {
-    const lessonPromises = [];
-
+    // Get lesson data from global variables (day1, day2, etc.)
     for (let i = 1; i <= 30; i++) {
-        const promise = new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = `js/lessons/day${i}.js`;
-            script.onload = () => {
-                // Get the lesson data from the global variable
-                const lessonData = window[`day${i}`];
-                if (lessonData) {
-                    window.lessonsData.push(lessonData);
-                }
-                resolve();
-            };
-            script.onerror = () => {
-                console.error(`Failed to load lesson day${i}.js`);
-                resolve(); // Continue even if one lesson fails
-            };
-            document.head.appendChild(script);
-        });
-        lessonPromises.push(promise);
+        const lessonData = window[`day${i}`];
+        if (lessonData) {
+            window.lessonsData.push(lessonData);
+        } else {
+            console.warn(`Lesson day${i} not found`);
+        }
     }
 
-    return Promise.all(lessonPromises).then(() => {
-        // Sort lessons by ID to ensure correct order
-        window.lessonsData.sort((a, b) => a.id - b.id);
-        console.log(`✅ Loaded ${window.lessonsData.length} lessons`);
-    });
+    // Sort lessons by ID to ensure correct order
+    window.lessonsData.sort((a, b) => a.id - b.id);
+    console.log(`✅ Loaded ${window.lessonsData.length} lessons`);
+
+    return Promise.resolve();
 }
 
 /**
- * Dynamically load all vocabulary files
- * Files: nouns-common.js, nouns-food.js, verbs.js, adjectives.js,
- *        expressions.js, family-people.js, places.js, nature-animals.js,
- *        time-numbers.js, technology-misc.js
+ * Load all vocabulary from pre-loaded scripts
+ * Vocabulary files are now loaded via script tags in index.html
  */
 function loadVocabulary() {
     const vocabFiles = [
-        'nouns-common',
-        'nouns-food',
-        'verbs',
-        'adjectives',
-        'expressions',
-        'family-people',
-        'places',
-        'nature-animals',
-        'time-numbers',
-        'technology-misc'
+        'nounsCommon',      // nouns-common.js
+        'nounsFood',        // nouns-food.js
+        'verbs',            // verbs.js
+        'adjectives',       // adjectives.js
+        'expressions',      // expressions.js
+        'familyPeople',     // family-people.js
+        'places',           // places.js
+        'natureAnimals',    // nature-animals.js
+        'timeNumbers',      // time-numbers.js
+        'technologyMisc'    // technology-misc.js
     ];
 
-    const vocabPromises = vocabFiles.map(fileName => {
-        return new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = `js/vocabulary/${fileName}.js`;
-            script.onload = () => {
-                // Get the vocabulary data from the global variable
-                // Convert kebab-case to camelCase (e.g., nouns-common -> nounsCommon)
-                const varName = fileName.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
-                const vocabData = window[varName];
-
-                if (vocabData && Array.isArray(vocabData)) {
-                    window.vocabularyData = window.vocabularyData.concat(vocabData);
-                }
-                resolve();
-            };
-            script.onerror = () => {
-                console.error(`Failed to load vocabulary ${fileName}.js`);
-                resolve(); // Continue even if one file fails
-            };
-            document.head.appendChild(script);
-        });
+    vocabFiles.forEach(varName => {
+        const vocabData = window[varName];
+        if (vocabData && Array.isArray(vocabData)) {
+            window.vocabularyData = window.vocabularyData.concat(vocabData);
+        } else {
+            console.warn(`Vocabulary ${varName} not found`);
+        }
     });
 
-    return Promise.all(vocabPromises).then(() => {
-        console.log(`✅ Loaded ${window.vocabularyData.length} vocabulary words`);
-    });
+    console.log(`✅ Loaded ${window.vocabularyData.length} vocabulary words`);
+
+    return Promise.resolve();
 }
 
 /**
