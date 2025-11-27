@@ -43,6 +43,9 @@
                     <a href="#grammar" class="nav-link" data-section="grammar">Grammaire</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#conjugation" class="nav-link" data-section="conjugation">Conjugaison</a>
+                </li>
+                <li class="nav-item">
                     <a href="#quiz" class="nav-link" data-section="quiz">Quiz</a>
                 </li>
                 <li class="nav-item">
@@ -153,6 +156,30 @@
 
                 <div class="grammar-content" id="grammarContent">
                     <!-- Grammar content will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Conjugation Section -->
+        <section id="conjugation" class="section section-conjugation">
+            <div class="container">
+                <h2 class="section-title">Conjugaison</h2>
+                <p class="section-description">Apprenez à conjuguer les verbes turcs aux différents temps</p>
+
+                <div class="conjugation-search">
+                    <input type="text" id="conjugationSearch" placeholder="Rechercher un verbe..." class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab-btn active" data-tense="present">Présent</button>
+                    <button class="tab-btn" data-tense="past">Passé</button>
+                    <button class="tab-btn" data-tense="future">Futur</button>
+                    <button class="tab-btn" data-tense="continuous">Présent Continu</button>
+                </div>
+
+                <div class="conjugation-content" id="conjugationContent">
+                    <!-- Conjugation content will be loaded here by JavaScript -->
                 </div>
             </div>
         </section>
@@ -357,6 +384,7 @@
     <script src="js/lessons.js"></script>
     <script src="js/dictionary.js"></script>
     <script src="js/grammar.js"></script>
+    <script src="js/conjugation.js"></script>
     <script src="js/quiz.js"></script>
     <script src="js/app.js"></script>
 </body>
